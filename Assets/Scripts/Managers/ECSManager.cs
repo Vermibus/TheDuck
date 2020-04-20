@@ -10,6 +10,11 @@ using Unity.Transforms;
 public class ECSManager : MonoBehaviour {
 
     public GameObject playerShipPrefab;
+    [Range(0, 100)] public float forwardThrust;
+    [Range(0, 100)] public float backwardThrust;
+    [Range(0, 100)] public float sideThrust;
+    [Range(0, 100)] public float pitchThrust;
+
     public GameObject bulletPrefab;
     public GameObject explosionPrefab;
 
@@ -21,6 +26,9 @@ public class ECSManager : MonoBehaviour {
     private GameObjectConversionSettings settings;
 
     void Start() {
+
+        Debug.Log("" + Utils.Vector.Forward(quaternion.identity));
+        Debug.Log("" + Utils.Vector.Left(quaternion.identity));
 
         blobAssetStore = new BlobAssetStore();
         // Convert GameObjects to Entities 
@@ -35,7 +43,11 @@ public class ECSManager : MonoBehaviour {
         entityManager.SetComponentData(playerEntityInstance, new Translation { Value = new float3(-50, 0, 0)});
         entityManager.SetComponentData(playerEntityInstance, new Rotation { Value = quaternion.identity});
         entityManager.SetComponentData(playerEntityInstance, new PlayerData {
-            speed = 30.0f,
+            forwardThrust = forwardThrust,
+            backwardThrust = backwardThrust,
+            sideThrust = sideThrust,
+            pitchThrust = pitchThrust,
+            dampener = false,
             reloadTime = 0.5f,
             nextFire = 0.0f,
             bulletPrefabEntity = bulletPrefabEntity,
@@ -95,7 +107,6 @@ public class ECSManager : MonoBehaviour {
             speed = civilianShipData.speed,
             followDistance = civilianShipData.followDistance,
             currentWaypoint = closestWaypoint,
-            // alive = true,
             explosionPrefabEntity = civilianShipData.explosionPrefabEntity,
         });
 

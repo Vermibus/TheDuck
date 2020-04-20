@@ -15,5 +15,5 @@ Skybox textures & Space kit are missing due to size.
 
 #### Used assets: 
 - **Space Kit (1.0)** 
-  Created/distributed by Kenney (www.kenney.nl)
+  Created/distributed by Kenney (www.kenney.nl)  
   License: (Creative Commons Zero, CC0)

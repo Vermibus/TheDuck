@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using Unity.Mathematics;
 using Unity.Entities;
 using Unity.Transforms;
@@ -16,12 +17,16 @@ public class GameDataManager : MonoBehaviour {
     public float3[] waypoints;
     public Transform[] waypointsGameobjects;
 
+    // Camera offsets
     [Range(-20,20)]
     public float cameraHorizontalOffset;
     [Range(-20,20)]
     public float cameraVerticalOffset;
     [Range(-20,20)]
     public float cameraForwardOffset;
+
+    // UI Hooks
+    public Text velocityText;
 
     void Awake() {
         if (instance != null && instance != this) {

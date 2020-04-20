@@ -204,7 +204,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843946978733249878}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -286,8 +286,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6843946979630552632}
   - component: {fileID: 6843946979630552633}
-  - component: {fileID: 6843946979630552634}
   - component: {fileID: 1698336528}
+  - component: {fileID: -710955220378979343}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -328,24 +328,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68b072ac697186c4ca7d83cbe1dc8355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  forwardThrust: 0
+  backwardThrust: 0
+  sideThrust: 0
+  pitchThrust: 0
   reloadTime: 0
   nextFire: 0
   bulletPrefabEntity: {fileID: 0}
---- !u!114 &6843946979630552634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6843946979630552635}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94b917b9e255a90488cced0c948b900b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axisVertical: 0
-  axisHorizontal: 0
 --- !u!114 &1698336528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +342,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843946979630552635}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b275e5f92732148048d7b77e264ac30e, type: 3}
   m_Name: 
@@ -419,6 +408,55 @@ MonoBehaviour:
       m_Override: 0
       m_Value: 0000000000000000
   m_ConvexRadius_Deprecated: -1
+--- !u!114 &-710955220378979343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6843946979630552635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccea9ea98e38942e0b0938c27ed1903e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MotionType: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0
+  m_InitialLinearVelocity:
+    x: 0
+    y: 0
+    z: 0
+  m_InitialAngularVelocity:
+    x: 0
+    y: 0
+    z: 0
+  m_GravityFactor: 0
+  m_OverrideDefaultMassDistribution: 0
+  m_CenterOfMass:
+    x: 0
+    y: 0
+    z: 0
+  m_Orientation:
+    Value:
+      x: 0
+      y: 0
+      z: 0
+    RotationOrder: 4
+  m_InertiaTensor:
+    x: 0.4
+    y: 0.4
+    z: 0.4
+  m_CustomTags:
+    Tag00: 0
+    Tag01: 0
+    Tag02: 0
+    Tag03: 0
+    Tag04: 0
+    Tag05: 0
+    Tag06: 0
+    Tag07: 0
 --- !u!1 &6843946979914664125
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +538,7 @@ VFXRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6843946979914664125}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
